@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>D3.js Double Histogram</title>
+  <!-- Load D3.js -->
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <style>
+    /* Define CSS styles for the chart */
+    .bar1 {
+      fill: steelblue;
+    }
+    .bar2 {
+      fill: orange;
+    }
+    .axis-label {
+      font-size: 14px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>D3.js Double Histogram with Two Colors</h1>
+
+  <div id="chart"></div>
+
+  <script>
+    // Set the dimensions of the chart
+    var width = 600,
+        height = 400,
+        margin = 50;
+
+    // Create the SVG container for the chart
+    var svg = d3.select("#chart")
+      .append("svg")
+        .attr("width", width + margin*2)
+        .attr("height", height + margin*2)
+      .append("g")
+        .attr("transform", "translate(" + margin + "," + margin + ")");
+
+    // Load the data from a CSV file
+    d3.csv("data.csv", function(data) {
+      // Extract the data for the two bars
+      var data1 = data.map(function(d) { return +d.value1; });
+      var data2 = data.map(function(d) { return +d.value2; });
+
+      // Extract the years for the chart
+      var years = data.map(function(d) { return +d.year; });
+
+      // Define the scales for the chart
+      var x = d3.scaleBand()
+          .domain(years)
+          .range([0, width])
+          .padding(0.1);
+
+      var y = d3.scaleLinear()
+          .domain([0, d3.max(data1.concat(data2))])
+          .range([height, 0]);
+
+      // Create the bars for the chart
+      svg.selectAll(".bar1")
+          .data(data1)
+        .enter().append("rect")
+          .attr("class", "bar1")
+          .attr("x", function(d,i) { return x(years[i]); })
+          .attr("y", function(d) { return y(d); })
+          .attr("width", x.bandwidth())
+          .attr("height", function(d) { return height - y(d); });
+
+      svg.selectAll(".bar2")
+          .data(data2)
+        .enter().append("rect")
+          .attr("class", "bar2")
+          .attr("x", function(d,i) { return x(years[i]); })
+          .attr("y", function(d) { return y(0); })
+          .attr("width", x.bandwidth())
+          .attr("height", function(d) { return y(d) - y(0); });
+
+      // Add the X axis to the chart
+      svg.append("g")
+          .attr("transform", "translate(0," + height + ")")
+          .call(d3.axisBottom(x));
+
+      // Add the Y axis to the chart
+      svg.append("g")
+          .call(d3.axisLeft(y));
+
+
+        });
+  </script>
+
+</body>
+</html>

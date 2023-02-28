@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>NETFLIX-Histogram</title>
+  <!-- Load D3.js -->
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <style>
+    /* Define CSS styles for the chart */
+    .bar1 {
+      fill: rgb(255, 131, 131);
+    }
+    .bar2 {
+      fill: rgb(255, 58, 51);
+    }
+    .axis-label {
+      font-size: 14px;
+      font-weight: bold;
+    }
+    body 
+        {
+			background-color: black;
+			color: rgb(255, 255, 255);
+			font-size: 30px;
+			text-align: center;
+			margin: 0;
+			padding: 0;
+		}
+  </style>
+</head>
+<body>
+
+  <h1>Total Movie & TV Show by Year</h1>
+
+  <div id="chart"></div>
+
+  <script>
+    // Define the data for the chart
+    var data1 = [ 4, 6, 7, 56, 103, 108, 139, 65];
+    var data2 = [ 8, 14, 35,168, 559, 631, 675, 153];
+
+    // Define the years for the chart
+    var years = d3.range(2013, 2021);
+
+    // Set the dimensions of the chart
+    var width = 600,
+        height = 400,
+        margin = 50;
+
+    // Create the SVG container for the chart
+    var svg = d3.select("#chart")
+      .append("svg")
+        .attr("width", width + margin*2)
+        .attr("height", height + margin*2)
+      .append("g")
+        .attr("transform", "translate(" + margin + "," + margin + ")");
+
+    // Define the scale for the chart
+    var x = d3.scaleBand()
+        .domain(years)
+        .range([0, width])
+        .padding(0.1);
+
+    var y = d3.scaleLinear()
+        .domain([0, d3.max(data1.concat(data2))])
+        .range([height, 0]);
+
+    // Create the bars for the chart
+    svg.selectAll(".bar1")
+        .data(data1)
+      .enter().append("rect")
+        .attr("class", "bar1")
+        .attr("x", function(d,i) { return x(years[i]); })
+        .attr("y", function(d) { return y(d); })
+        .attr("width", x.bandwidth()/2)
+        .attr("height", function(d) { return height - y(d); });
+
+    svg.selectAll(".bar2")
+        .data(data2)
+      .enter().append("rect")
+        .attr("class", "bar2")
+        .attr("x", function(d,i) { return x(years[i]) + x.bandwidth()/2; })
+        .attr("y", function(d) { return y(d); })
+        .attr("width", x.bandwidth()/2)
+        .attr("height", function(d) { return height - y(d); });
+
+    // Add the X axis to the chart
+    svg.append("g")
+        .attr("transform", "translate(0," + height + ")")
+        .call(d3.axisBottom(x));
+
+    // Add the Y axis to the chart
+    svg.append("g")
+        .call(d3.axisLeft(y));
+
+    // Add the axis labels to the chart
+    svg.append("text")
+        .attr("class", "axis-label")
+        .attr("x", width/2)
+        .attr("y", height + margin)
+        .attr("fill", "white")
+        .style("text-anchor", "middle")
+        .text("Year");
+        
+        
+
+    svg.append("text")
+        .attr("class", "axis-label")
+        .attr("transform", "rotate(-90)")
+        .attr("x", -height/2)
+        .attr("y", margin.axisLeft + width)
+        .style("text-anchor", "middle")
+        .text("Y Axis Label");
+
+    svg.append("circle").attr("cx",200).attr("cy",30).attr("r", 6).style("fill", "rgb(255, 58, 51)")
+    svg.append("circle").attr("cx",200).attr("cy",60).attr("r", 6).style("fill", "rgb(255, 131, 131)")
+    svg.append("text").attr("x", 220).attr("y", 30).text("MOVIES").style("font-size", "15px").attr("alignment-baseline","middle").attr("fill", "white");
+    svg.append("text").attr("x", 220).attr("y", 60).text("TV SHOWS").style("font-size", "15px").attr("alignment-baseline","middle").attr("fill", "white");
+
+
+    // svg.append("text")
+    //     .attr("transform", "rotate(-90)")
+    //     .attr('y', 0 - margin.left * .75)
+    //     .attr('x', 0 - (height/2))
+    //     .style("text-anchor", "middle")
+    //     .text("IBU")
+
+  </script>
+
+</body>
+</html>

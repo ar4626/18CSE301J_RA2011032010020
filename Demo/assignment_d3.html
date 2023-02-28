@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Netflix </title>
+  <!-- Load D3.js -->
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <style>
+    /* Define CSS styles for the chart */
+    .bar {
+      fill: steelblue;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>D3.js Bar Chart</h1>
+
+  <div id="chart"></div>
+
+  <script>
+    // Define the data for the chart
+    var data = [4, 8, 15, 16, 23, 42];
+
+    // Set the dimensions of the chart
+    var width = 420,
+        height = 300,
+        margin = 50;
+
+    // Create the SVG container for the chart
+    var svg = d3.select("#chart")
+      .append("svg")
+        .attr("width", width + margin*2)
+        .attr("height", height + margin*2)
+      .append("g")
+        .attr("transform", "translate(" + margin + "," + margin + ")");
+
+    // Define the scale for the chart
+    var x = d3.scaleBand()
+        .domain(data.map(function(d,i) { return i; }))
+        .range([0, width])
+        .padding(0.1);
+
+    var y = d3.scaleLinear()
+        .domain([0, d3.max(data)])
+        .range([height, 0]);
+
+    // Create the bars for the chart
+    svg.selectAll(".bar")
+        .data(data)
+      .enter().append("rect")
+        .attr("class", "bar")
+        .attr("x", function(d,i) { return x(i); })
+        .attr("width", x.bandwidth())
+        .attr("y", function(d) { return y(d); })
+        .attr("height", function(d) { return height - y(d); });
+
+    // Add the X axis to the chart
+    svg.append("g")
+        .attr("transform", "translate(0," + height + ")")
+        .call(d3.axisBottom(x));
+
+    // Add the Y axis to the chart
+    svg.append("g")
+        .call(d3.axisLeft(y));
+  </script>
+
+</body>
+</html>

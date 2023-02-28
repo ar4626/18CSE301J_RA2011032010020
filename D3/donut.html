@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>NETFLIX-Donut</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <style>
+    /* Define CSS styles for the chart */
+    svg {
+      font-family: Arial, sans-serif;
+    }
+    .slice path {
+      stroke-width: 2px;
+    }
+    .label text {
+      font-size: 12px;
+      text-anchor: middle;
+    }
+    body 
+        {
+			background-color: black;
+			color: rgb(255, 255, 255);
+			font-size: 30px;
+			text-align: center;
+			margin: 0;
+			padding: 0;
+		}
+  </style>
+</head>
+<body>
+
+  <h1>Movies and TV Show Distribution</h1>
+
+  <div id="chart"></div>
+
+  <script>
+    // Set the dimensions of the chart
+    var width = 600,
+        height = 400,
+        radius = Math.min(width, height) / 2;
+
+    // Define the data for the chart
+    var data = [
+      { name: "Movies", value: 2341 },
+      { name: "TV Shows", value: 420 }
+    ];
+
+    // Create the SVG container for the chart
+    var svg = d3.select("#chart")
+      .append("svg")
+        .attr("width", width)
+        .attr("height", height)
+      .append("g")
+        .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+    // Define the color scale for the chart
+    var color = d3.scaleOrdinal()
+      .range(["rgb(255, 58, 51)", "rgb(255, 131, 131)"]);
+
+    // Define the arc for the chart
+    var arc = d3.arc()
+      .innerRadius(radius * 0.3)
+      .outerRadius(radius * 0.8);
+
+    // Define the arc for the chart labels
+    var outerArc = d3.arc()
+      .innerRadius(radius * 0.9)
+      .outerRadius(radius * 0.9);
+
+    // Define the pie layout for the chart
+    var pie = d3.pie()
+      .value(function(d) { return d.value; })
+      .sort(null);
+
+    // Create the slices for the chart
+    var slices = svg.selectAll(".slice")
+      .data(pie(data))
+      .enter()
+      .append("g")
+        .attr("class", "slice");
+
+    slices.append("path")
+      .attr("d", arc)
+      .attr("fill", function(d) { return color(d.data.name); });
+
+    // Add the labels for the chart
+    var labels = svg.selectAll(".label")
+      .data(pie(data))
+      .enter()
+      .append("g")
+        .attr("class", "label");
+
+    labels.append("text")
+      .attr("transform", function(d) { return "translate(" + outerArc.centroid(d) + ")"; })
+      .attr("dy", ".35em")
+      .text(function(d) { return d.data.name; }).attr("fill", "white");
+
+            // });
+</script>
+
+</body>
+</html>
