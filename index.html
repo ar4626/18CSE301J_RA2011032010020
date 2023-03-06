@@ -1,56 +1,482 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>Information Visualization</title>
-	<style>
-		body 
-        {
-			background-color: black;
-			color: white;
-			font-size: 24px;
-			text-align: center;
-			margin: 0;
-			padding: 0;
-		}
-	</style>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Start your development with Rubic landing page.">
+    <meta name="author" content="Devcrud">
+    <title>INFORMATION VIZUALISATION</title>
+    <!-- font icons -->
+    <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
+    <!-- Bootstrap + Rubic main styles -->
+	<link rel="stylesheet" href="assets/css/rubic.css">
 </head>
-<body><center>	
-	<h1>INFORMATION VISUALIZATION - 18CSE302J </h1>
-    	<h2>Assignment 2</h2>
-	<h2>TABLEAU PROJECT</h2>
+<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home" >
 
-    <div class='tableauPlaceholder' id='viz1677591549557' style='position: relative'>
-	    <noscript>
-		    <a href='#'>
-		    <img alt='Netflix ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ne&#47;Netflix_16775069938830&#47;Netflix&#47;1_rss.png' style='border: none' />
-		    </a>
-	    </noscript>
-	    <object class='tableauViz'  style='display:none;'>
-		    <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
-		    <param name='embed_code_version' value='3' /> 
-		    <param name='site_root' value='' />
-		    <param name='name' value='Netflix_16775069938830&#47;Netflix' />
-		    <param name='tabs' value='no' />
-		    <param name='toolbar' value='yes' />
-		    <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ne&#47;Netflix_16775069938830&#47;Netflix&#47;1.png' /> 
-		    <param name='animate_transition' value='yes' />
-		    <param name='display_static_image' value='yes' />
-		    <param name='display_spinner' value='yes' />
-		    <param name='display_overlay' value='yes' /><param name='display_count' value='yes' />
-		    <param name='language' value='en-GB' />
-	    </object>
-	</div>                
-	<script type='text/javascript'>                    
-		var divElement = document.getElementById('viz1677591549557');                    
-		var vizElement = divElement.getElementsByTagName('object')[0];                    
-		if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1000px';vizElement.style.height='827px';} 
-		else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1000px';vizElement.style.height='827px';} 
-		else { vizElement.style.width='100%';vizElement.style.height='2377px';}                     
-		var scriptElement = document.createElement('script');                    
-		scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    
-		vizElement.parentNode.insertBefore(scriptElement, vizElement);                
-	</script>
+    <nav id="scrollspy" class="navbar page-navbar navbar-dark navbar-expand-md fixed-top" data-spy="affix" data-offset-top="20">
+        <div class="container">
+            <a class="navbar-brand" href="#"><strong class="text-primary">ANKIT RAJ</strong><span class="text-light"> (RA2011032010020)</span></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-</center>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features">Project</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">Tableua</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#d3">D3</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#python">Python</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#review">Gephi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact </a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link btn btn-primary text-dark shadow-none ml-md-4" href="components.html">Components</a>
+                    </li> -->
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <header class="header d-flex justify-content-center">
+        <div class="container">
+            <div class="row h-100 align-items-center">
+                <div class="col-md-7">
+                    <div class="header-content">
+                        <h3 class="header-title"><strong class="text-primary">INFORMATION</strong><span class="text-light">_VIZUALISATION</span></h3>
+                        <h3 class="header-subtitle"><b>18CSE302J</b> </h3>
+                        <a href="https://github.com/ar4626/18CSE301J_RA2011032010020.git" >
+                            <button class="btn btn-outline-light btn-flat" h>EXPLORE GITHUB</button>
+                        </a>
+                    </div>  
+                </div>
+            </div>  
+        </div>
+    </header>
+    <!-- <div class="social-wrapper" id="features">
+        <div class="container">
+            <div class="social-txt">
+                <h6 class="title">Social Media</h6>
+                <p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus voluptate numquam sed expedita vitae ipsa?</p>
+            </div>
+            <div class="social-links">
+                <a href="javascript:void(0)" class="link"><i class="ti-facebook"></i></a>
+                <a href="javascript:void(0)" class="link"><i class="ti-twitter-alt"></i></a>
+                <a href="javascript:void(0)" class="link"><i class="ti-google"></i></a>
+                <a href="javascript:void(0)" class="link"><i class="ti-pinterest-alt"></i></a>
+                <a href="javascript:void(0)" class="link"><i class="ti-instagram"></i></a>
+                <a href="javascript:void(0)" class="link"><i class="ti-rss"></i></a>
+            </div>
+        </div>          
+    </div> -->
+    <section class="section" id="features">
+        <div class="container">
+            <div class="row justify-content-around">
+                <div class="col-lg-8">
+                    <div class="tabs-container">
+                        <ul class="nav tab-nav" id="pills-tab">
+                            <li class="item">
+                                <a class="link active" id="pills-home-tab" data-toggle="pill" href="#tableua"aria-selected="true">Tabelua</a>
+                            </li>
+                            <li class="item">
+                                <a class="link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile"aria-selected="false">D3</a>
+                            </li>
+                            <li class="item">
+                                <a class="link" id="pills-contact-tab" data-toggle="pill" href="#collab"aria-selected="false">Python</a>
+                            </li>
+                            <li class="item">
+                                <a class="link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact"aria-selected="false">Gephi</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane fade show active" id="tableua">
+                                <h4 class="title">NETFLIX - ANALYSIS</h4>
+                                <p>The Tableau project analyzed Netflix's performance by examining subscriber numbers, revenue, and content offerings, including TV shows, movies, and ratings. The data was represented in various types of charts and maps, including bar charts, line charts, heat maps, and geographic maps. These visualizations helped to present the data in an easy-to-understand format and allowed for the identification of trends and patterns in the data.</p>
+                                <p>By using a variety of visualizations, the Tableau project was able to provide a comprehensive analysis of Netflix's performance, highlighting key insights and trends that helped the company make data-driven decisions about its business strategies.</p>
+                                <a href="https://github.com/ar4626/18CSE301J_RA2011032010020/tree/main/Tableua%20-%20Netflix%20Analysis">
+                                    <button class="btn btn-primary mt-3">Github Folder</button>
+                                </a>                             
+                                <a class="nav-link" href="#about">
+                                    <button class="btn btn-primary mt-3"><i class="ti-arrow-down"></i></button>
+                                </a>
+                            </div>
+                            <div class="tab-pane fade" id="pills-profile">
+                                <h4 class="title">Netflix Analysis</h4>
+                                <p>The D3 project analyzed Netflix's performance by examining subscriber numbers, revenue, and content offerings, such as TV shows, movies, and ratings. The data was loaded into D3 and represented in various types of charts, such as bar charts, line chart and Donut chart, which helped to present the data in an easy-to-understand format.</p>
+                                <p>These visualizations allowed for the identification of trends and patterns in the data, enabling the project to provide a comprehensive analysis of Netflix's performance. </p>
+                                <a href="https://github.com/ar4626/18CSE301J_RA2011032010020/tree/d3d469541c4b9d2d2a8b5caf4382c9bc92db7a9e/D3">
+                                    <button class="btn btn-primary mt-3">Github Folder</button>
+                                </a>        
+                                <a class="nav-link" href="#d3">
+                                    <button class="btn btn-primary mt-3"><i class="ti-arrow-down"></i></button>
+                                </a>
+                            </div>
+                            <div class="tab-pane fade" id="collab">
+                                <h4 class="title">Sales Analysis </h4>
+                                <p>The sales analysis in Python using pandas and matplotlib involved analyzing a company's sales data to identify trends, patterns, and insights that could be used to make data-driven business decisions. The analysis was conducted using two popular data science libraries in Python: pandas and matplotlib.</p>
+                                <p>The resulting charts and graphs provided valuable insights into sales trends and patterns, including changes over time, comparisons across different regions or products, and relationships between variables such as sales volume and price. By leveraging the power of data science, this sales analysis helped to drive data-driven decisions and support business growth.</p>
+                                <a href="https://github.com/ar4626/Sales-Analysis.git">
+                                    <button class="btn btn-primary mt-3">Github Folder</button>
+                                </a>        
+                                <a class="nav-link" href="#python">
+                                    <button class="btn btn-primary mt-3"><i class="ti-arrow-down"></i></button>
+                                </a>                       
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 d-none d-lg-block align-self-center">
+                    <img src="assets/imgs/eiffel-tower.svg" alt="" class="w-100 tower">
+                </div>
+            </div>                  
+        </div>                      
+    </section>
+
+    <section class="section1" id="about">
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="container text-center">
+            <h6 class="display-4 has-line">TABLEUA (Netflix Analysis) </h6>
+            <p class="mb-5 pb-4">Netflix data analysis using Tableua </p>
+            
+<!-- TABLEUA PUBLIC LINK -->
+            <center>
+            <div class='tableauPlaceholder' id='viz1677591549557' style='position: relative'>
+                <noscript>
+                    <a href='#'>
+                    <img alt='Netflix ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ne&#47;Netflix_16775069938830&#47;Netflix&#47;1_rss.png' style='border: none' />
+                    </a>
+                </noscript>
+                <object class='tableauViz'  style='display:none;'>
+                    <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
+                    <param name='embed_code_version' value='3' /> 
+                    <param name='site_root' value='' />
+                    <param name='name' value='Netflix_16775069938830&#47;Netflix' />
+                    <param name='tabs' value='no' />
+                    <param name='toolbar' value='yes' />
+                    <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ne&#47;Netflix_16775069938830&#47;Netflix&#47;1.png' /> 
+                    <param name='animate_transition' value='yes' />
+                    <param name='display_static_image' value='yes' />
+                    <param name='display_spinner' value='yes' />
+                    <param name='display_overlay' value='yes' /><param name='display_count' value='yes' />
+                    <param name='language' value='en-GB' />
+                </object>
+            </div>                
+            <script type='text/javascript'>                    
+                var divElement = document.getElementById('viz1677591549557');                    
+                var vizElement = divElement.getElementsByTagName('object')[0];                    
+                if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1000px';vizElement.style.height='827px';} 
+                else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1000px';vizElement.style.height='827px';} 
+                else { vizElement.style.width='100%';vizElement.style.height='2377px';}                     
+                var scriptElement = document.createElement('script');                    
+                scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    
+                vizElement.parentNode.insertBefore(scriptElement, vizElement);                
+            </script>
+            </center>
+            <br>
+            <div> 
+                <a href="https://github.com/ar4626/18CSE301J_RA2011032010020/tree/d3d469541c4b9d2d2a8b5caf4382c9bc92db7a9e/Tableua%20-%20Netflix%20Analysis" >
+                    <button class="btn btn-outline-light btn-flat" h>EXPLORE GITHUB</button>
+                </a>
+            </div>
+            <br>
+
+            <!-- <div class="row">
+                <div class="col-lg-4">
+                    <div class="circle-100 mb-3"><i class="ti-github"></i></div>
+                    <h6 class="title mb-3">Github File ]</h6>
+                </div>
+                <div class="col-lg-4">
+                    <div class="circle-100 mb-3"><i class="ti-folder"></i></div>
+                    <h6 class="title mb-3">WELL CRAFTED</h6>
+                </div>
+                <div class="col-lg-4">
+                    <div class="circle-100 mb-3"><i class="ti-marker-alt"></i></div>
+                    <h6 class="title mb-3">EASY TO CUSTOMIZE</h6>
+                </div>
+            </div> -->
+        </div>
+    </section>
+<!--  D3 -->
+    <section class="section" id="d3">
+        <div class="container">
+            <center>
+                <h6 class="display-4 has-line">D3 (Netflix Analysis)</h6>
+                <p class="mb-5 pb-4">Netflix Data Analysis using Javascript Liberary {D3}</p>
+            </center>
+            <div class="row justify-content-between">
+                <div >
+                    <p><b>D3 (Data-Driven Documents)</b> is a powerful JavaScript library used for creating interactive and dynamic data visualizations on the web. It provides a range of tools and functions for manipulating data and generating various types of charts, including bar charts, line charts, scatter plots, and geographic maps. D3 allows users to bind data to HTML, SVG, and CSS elements and apply data-driven transformations to those elements, creating dynamic visualizations that change based on the data being visualized. D3 is a popular choice for creating data visualizations because it is flexible, customizable, and can be integrated with other JavaScript libraries and frameworks for more complex web applications.</p>                    
+                    <p>By using a variety of visualizations, the D3 project was able to provide a comprehensive analysis of Netflix's performance, highlighting key insights and trends that helped the company make data-driven decisions about its business strategies.</p>
+                </div>
+                <div> 
+                    <a href="https://colab.research.google.com/drive/1lrDYVf4X9P9LkxwO3cKoQxgT5GumjxVW?usp=sharing" >
+                        <button class="btn btn-outline-light btn-flat" h>Google Collab</button>
+                    </a>
+                    
+                    <a href="https://github.com/ar4626/18CSE301J_RA2011032010020/tree/d3d469541c4b9d2d2a8b5caf4382c9bc92db7a9e/D3" >
+                        <button class="btn btn-outline-light btn-flat" h>EXPLORE GITHUB</button>
+                    </a>
+                    <br>
+                    <br>
+                    <iframe
+                    src="http://www.google.co.in"
+                    name="targetframe"
+                    allowTransparency="true"
+                    scrolling="no"
+                    frameborder="0">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Python  -->
+
+    <section class="section1" id ="python">
+        <div class="container">
+            <br>
+            <br>
+            <br>
+            <br>
+            <center><h6 class="display-4 has-line">PYTHON (Sales Analysis) </h6>
+                <p class="mb-5 pb-4">Sales data analysis using Python Liberaries </p>
+            </center>
+            <div class="row justify-content-between">               
+                <div >
+                    <p><b>Pandas</b> is a Python library for data analysis and manipulation, which provides user-friendly data structures and tools for working with structured data, including time-series data. It also offers support for reading and writing data in various formats, such as CSV, Excel, and SQL databases. With pandas, you can easily clean, transform, and aggregate data, handle missing data, and perform statistical analysis.</p>
+                    <p><b>Matplotlib</b>, on the other hand, is a popular Python library for creating static visualizations. It offers a wide range of tools and functions for creating different types of charts and plots, such as line charts, scatter plots, bar charts, histograms, and more. Matplotlib is highly customizable, and you can adjust every aspect of your visualizations, from the axis labels and tick marks to the colors and styles of the lines or bars. It also supports multiple output formats, including PNG, PDF, and SVG, and can be integrated with other libraries like NumPy and pandas for data analysis and manipulation.</p>                    
+                </div>
+                <div> 
+                    <a href="https://colab.research.google.com/drive/1lrDYVf4X9P9LkxwO3cKoQxgT5GumjxVW?usp=sharing" >
+                        <button class="btn btn-outline-light btn-flat" h>Google Collab</button>
+                    </a>
+                    
+                    <a href="https://github.com/ar4626/Sales-Analysis.git" >
+                        <button class="btn btn-outline-light btn-flat" h>EXPLORE GITHUB</button>
+                    </a>
+                    <br>
+                    <br>
+                   
+                </div>
+                <!-- <div class="col-md-5 mt-4 mt-md-0">
+                    <img src="assets/imgs/img1.jpg" alt="" class="shadow w-100">
+                </div> -->
+            </div>
+            <div class="row justify-content-between">               
+                
+                <div>
+                    <h6 class="title">Regarding the Data Set</h6>
+                </div>
+                <div >
+                    <p>This sales analysis dataset contains information related to sales transactions recorded between January 1, 2019, and December 31, 2019, in a particular region. The dataset includes various columns, such as date and time, product category, product type, sales revenue, quantity sold, customer demographics, and marketing channels. The sales revenue column represents the total revenue generated by each transaction, while the quantity sold column indicates the number of units sold in each transaction. Additionally, the dataset includes information about customer demographics, such as age, gender, and location, as well as details about the marketing channels used to promote the products. Overall, this dataset provides useful information for sales analysis and prediction in the region under consideration.</p>
+                    <!-- <p><b>Matplotlib</b>, on the other hand, is a popular Python library for creating static visualizations. It offers a wide range of tools and functions for creating different types of charts and plots, such as line charts, scatter plots, bar charts, histograms, and more. Matplotlib is highly customizable, and you can adjust every aspect of your visualizations, from the axis labels and tick marks to the colors and styles of the lines or bars. It also supports multiple output formats, including PNG, PDF, and SVG, and can be integrated with other libraries like NumPy and pandas for data analysis and manipulation.</p>                     -->
+                </div>
+
+                <div class="col-md-5">
+                    <h4 class="title">Vizualising Sales Data</h4>
+                    <h6>Monthly Sales</h6>
+                    <img src="assets/imgs/c1.jpg" alt="" class="shadow w-100" >
+                    <br>
+                    <br>
+                    <h6>Advertisements to maximize buying product (Hours-Count)</h6>
+                    <img src="assets/imgs/c3.jpg" alt="" class="shadow w-100">
+                    <br>
+                    <br>
+                    <h6>Advertisements to maximize buying product (Hours-Count)</h6>
+                    <img src="assets/imgs/c5.jpg" alt="" class="shadow w-100">
+                    <br>
+                    <br>
+                    <br>
+                </div>
+                <div class="col-md-5">
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <h6 >Yearly Sales per City</h6>
+                    <img src="assets/imgs/c2.jpg" alt="" class="shadow w-100">
+                    <br>
+                    <br>
+                    <h6>Yearly Sales (Product-Count)</h6>
+                    <img src="assets/imgs/c4.jpg" alt="" class="shadow w-100">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="pricing">
+        <div class="container text-center">
+            <h6 class="display-4 has-line">PRICING OPTIONS</h6>
+            <p class="mb-5 pb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <div class="row pt-5">
+                <div class="col-lg-4">
+                    <a href="javascript:void(0)" class="pricing-card">
+                        <div class="head">Basib</div>
+                        <div class="body">
+                            <h1><small>$</small>0</h1>
+                            <p>Free for Life</p>
+                        </div>
+                        <ul class="list-group">
+                            <li class="list-group-item">1 GB OF SPACE</li>
+                            <li class="list-group-item">10 GB OF BANDWIDTH</li>
+                            <li class="list-group-item">3 WEBSITES</li>
+                            <li class="list-group-item">BASIC CUSTOMIZATION</li>
+                            <li class="list-group-item">WORDPRESS INTEGRATION</li>
+                            <li class="list-group-item">EMAIL SUPPORT</li>
+                        </ul>
+                    </a>
+                </div>
+                <div class="col-lg-4">
+                    <a href="javascript:void(0)" class="pricing-card popular">
+                        <div class="head">Professional</div>
+                        <div class="body">
+                            <h1><small>$</small>14.99</h1>
+                            <p>Monthly Payment</p>
+                        </div>
+                        <div class="popular-item">OUR MOST POPULAR</div>
+                        <ul class="list-group">
+                            <li class="list-group-item">5 GB OF SPACE</li>
+                            <li class="list-group-item">50 GB OF BANDWIDTH</li>
+                            <li class="list-group-item">10 WEBSITES</li>
+                            <li class="list-group-item">ADVANCED CUSTOMIZATION</li>
+                            <li class="list-group-item">WORDPRESS INTEGRATION</li>
+                            <li class="list-group-item">EMAIL SUPPORT</li>
+                        </ul>
+                    </a>
+                </div>
+                <div class="col-lg-4">
+                    <a href="javascript:void(0)" class="pricing-card">
+                        <div class="head">Enterprise</div>
+                        <div class="body">
+                            <h1><small>$</small>99</h1>
+                            <p>Monthly Payment</p>
+                        </div>
+                        <ul class="list-group">
+                            <li class="list-group-item">UNLIMITED OF SPACE</li>
+                            <li class="list-group-item">UNLIMITED BANDWIDTH</li>
+                            <li class="list-group-item">120 WEBSITES</li>
+                            <li class="list-group-item">ADVANCED CUSTOMIZATION</li>
+                            <li class="list-group-item">WORDPRESS INTEGRATION</li>
+                            <li class="list-group-item">EMAIL SUPPORT</li>
+                        </ul>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- <section class="section" id="review">
+        <div class="container text-center">
+            <h6 class="display-4 has-line">WHAT OUR CUSTOMERS ARE SAYING</h6>
+            <p class="mb-5 pb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <div class="row text-left">
+                <div class="col-md-4">
+                    <div class="testmonial">                        
+                        <p class="description"><i>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, eaque, repellat. Corporis facilis reprehenderit, cupiditate.</i></p>
+                        <div class="media">
+                            <img class="mr-3" src="assets/imgs/avatar1.jpg" width="60" alt="Generic placeholder image">
+                            <div class="media-body">
+                                <h6 class="title">Emma Re</h6>
+                                <p class="text-muted">Web Designer</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testmonial">                        
+                        <p class="description"><i>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, eaque, repellat. Corporis facilis reprehenderit, cupiditate.</i></p>
+                        <div class="media">
+                            <img class="mr-3" src="assets/imgs/avatar2.jpg" width="60" alt="Generic placeholder image">
+                            <div class="media-body">
+                                <h6 class="title">John Doe</h6>
+                                <p class="text-muted">Freelancer</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testmonial">                        
+                        <p class="description"><i>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, eaque, repellat. Corporis facilis reprehenderit, cupiditate.</i></p>
+                        <div class="media">
+                            <img class="mr-3" src="assets/imgs/avatar3.jpg" width="60" alt="Generic placeholder image">
+                            <div class="media-body">
+                                <h6 class="title">Emily Roe</h6>
+                                <p class="text-muted">Graphic Designer</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>              
+            </div>
+        </div>
+    </section> -->
+    <!-- <section class="section has-img-bg text-center">
+        <div class="container">
+            <h6 class="display-3 has-line">STYLISH AXURE DESIGN</h6>
+            <h5 class="mb-5 font-weight-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, itaque.</h5>
+            <button class="btn btn-outline-light btn-flat">Download</button>
+        </div>
+    </section> -->
+    <!-- <section class="section" id="contact">
+        <div class="container text-center">
+            <h6 class="display-4 has-line">CONTACT US</h6>
+            <p class="mb-5 pb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+            <form>
+                <div class="row mb-4">
+                    <div class="col-md-6">
+                        <div class="form-group pb-1">
+                            <input type="text" class="form-control" required placeholder="Name">            
+                        </div>
+                        <div class="form-group pb-1">
+                            <input type="email" class="form-control" required placeholder="Email">          
+                        </div>
+                        <div class="form-group ">
+                            <input type="text" class="form-control" placeholder="Subject">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <textarea name="" id="" cols="" rows="7" class="form-control" required placeholder="Message"></textarea>
+                    </div>
+                </div>
+                <input type="submit" class="btn btn-primary btn-block" value="Send Message">
+            </form>
+        </div>
+    </section> -->
+    <footer class="footer py-4 bg-dark text-light"> 
+        <div class="container text-center">
+            <p class="mb-4 small">Copyright <script>document.write(new Date().getFullYear())</script> &copy; <a href=""> ar2646</a></p>
+            <div class="social-links">
+                <a href="javascript:void(0)" class="link"><i class="ti-facebook"></i></a>
+                <a href="javascript:void(0)" class="link"><i class="ti-twitter-alt"></i></a>
+                <a href="javascript:void(0)" class="link"><i class="ti-google"></i></a>
+                <a href="javascript:void(0)" class="link"><i class="ti-pinterest-alt"></i></a>
+                <a href="javascript:void(0)" class="link"><i class="ti-instagram"></i></a>
+                <a href="javascript:void(0)" class="link"><i class="ti-rss"></i></a>
+            </div>
+        </div>
+    </footer>
+	
+	<!-- core  -->
+    <script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
+    <script src="assets/vendors/bootstrap/bootstrap.bundle.js"></script>
+    <!-- bootstrap 3 affix -->
+	<script src="assets/vendors/bootstrap/bootstrap.affix.js"></script>
+
+    <!-- Rubic js -->
+    <script src="assets/js/rubic.js"></script>
+
 </body>
 </html>
